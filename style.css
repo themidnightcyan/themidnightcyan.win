@@ -190,7 +190,7 @@ header {
 }
 
 .section h2::after {
-    content: " 🦋";
+    content: " 🪻";
     opacity: 0.7;
     font-size: 0.8em;
 }
