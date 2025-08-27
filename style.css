@@ -1,41 +1,41 @@
 /* Comic Code font declarations */
 @font-face {
     font-family: 'Comic Code';
-    src: url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Regular_2022-05-24-151938_hsmz.woff2') format('woff2'),
-         url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Regular_2022-05-24-151938_hsmz.woff') format('woff');
+    src: url('https://www.doughmination.win/fonts/ComicCode-Regular_2022-05-24-151938_hsmz.woff2') format('woff2'),
+         url('https://www.doughmination.win/fonts/ComicCode-Regular_2022-05-24-151938_hsmz.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Comic Code';
-    src: url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Italic_2022-05-24-151939_rdtu.woff2') format('woff2'),
-         url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Italic_2022-05-24-151939_rdtu.woff') format('woff');
+    src: url('https://www.doughmination.win/fonts/ComicCode-Italic_2022-05-24-151939_rdtu.woff2') format('woff2'),
+         url('https://www.doughmination.win/fonts/ComicCode-Italic_2022-05-24-151939_rdtu.woff') format('woff');
     font-weight: 400;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Comic Code';
-    src: url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Medium_2022-05-24-151941_ugqm.woff2') format('woff2'),
-         url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Medium_2022-05-24-151941_ugqm.woff') format('woff');
+    src: url('https://www.doughmination.win/fonts/ComicCode-Medium_2022-05-24-151941_ugqm.woff2') format('woff2'),
+         url('https://www.doughmination.win/fonts/ComicCode-Medium_2022-05-24-151941_ugqm.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Comic Code';
-    src: url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Bold_2022-05-24-152309_zqkm.woff2') format('woff2'),
-         url('https://plural.clovetwilight3.co.uk/fonts/ComicCode-Bold_2022-05-24-152309_zqkm.woff') format('woff');
+    src: url('https://www.doughmination.win/fonts/ComicCode-Bold_2022-05-24-152309_zqkm.woff2') format('woff2'),
+         url('https://www.doughmination.win/fonts/ComicCode-Bold_2022-05-24-152309_zqkm.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 }
 
 /* Comic Sans font stack */
 :root {
-    --twilight-dark: #2a1b3d;
-    --twilight-medium: #44318d;
-    --twilight-light: #6b5b95;
+    --twilight-dark: #003f5c;   /* replaced #2a1b3d */
+    --twilight-medium: #2f6690; /* new medium variant */
+    --twilight-light: #84a9ac;  /* new light variant */
     --butterfly-purple: #9b7cb6;
     --sugar-pink: #f8d7da;
     --sugar-cream: #fff8dc;
@@ -137,6 +137,97 @@ header {
     50% { transform: translateY(-10px) rotate(3deg); }
 }
 
+/* Flags section styling */
+.flags-section {
+    margin-bottom: 40px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    scroll-margin-top: 20px;
+}
+
+.flags-section h2 {
+    color: var(--butterfly-purple);
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.flags-section h2::after {
+    content: " 🏳️";
+    opacity: 0.7;
+    font-size: 0.8em;
+}
+
+.flags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.flag-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.flag-item:hover {
+    transform: translateY(-5px);
+}
+
+.flag-image {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid var(--butterfly-purple);
+    box-shadow: 0 4px 15px rgba(163, 136, 238, 0.2);
+    transition: all 0.3s ease;
+}
+
+.flag-item:hover .flag-image {
+    border-color: var(--accent-glow);
+    box-shadow: 0 6px 20px rgba(163, 136, 238, 0.4);
+    transform: scale(1.05);
+}
+
+.flag-tooltip {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 63, 92, 0.95); /* updated dark tone */
+    color: var(--text-light);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--butterfly-purple);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    max-width: 220px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+    pointer-events: none;
+}
+
+.flag-item:hover .flag-tooltip {
+    opacity: 1;
+    visibility: visible;
+    bottom: -70px;
+}
+
 /* Navigation */
 .nav-menu {
     display: flex;
@@ -190,7 +281,7 @@ header {
 }
 
 .section h2::after {
-    content: " 🪻";
+    content: " 🦋";
     opacity: 0.7;
     font-size: 0.8em;
 }
@@ -391,6 +482,21 @@ header {
     box-shadow: 0 0 30px rgba(163, 136, 238, 0.5);
 }
 
+/* Discord embed styling */
+.discord-embed {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid var(--butterfly-purple);
+    box-shadow: 0 4px 15px rgba(163, 136, 238, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discord-embed:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(163, 136, 238, 0.3);
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -414,32 +520,54 @@ html {
     .main-title {
         font-size: 2.2rem;
     }
-
+    
     .nav-menu {
         gap: 15px;
     }
-
+    
     .nav-link {
         font-size: 0.8rem;
         padding: 8px 12px;
     }
-
+    
     .interests-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 15px;
     }
-
+    
     .section {
         padding: 25px;
         margin-bottom: 40px;
     }
-
+    
     .section h2 {
         font-size: 1.6rem;
     }
-
+    
     .container {
         padding: 15px;
+    }
+
+    /* Flags responsive adjustments */
+    .flags-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 20px;
+    }
+    
+    .flag-image {
+        width: 80px;
+        height: 48px;
+    }
+    
+    .flag-tooltip {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+        max-width: 180px;
+        bottom: -55px;
+    }
+
+    .flag-item:hover .flag-tooltip {
+        bottom: -65px;
     }
 }
 
@@ -447,85 +575,14 @@ html {
     .main-title {
         font-size: 2rem;
     }
-
+    
     .interests-grid {
         grid-template-columns: 1fr;
     }
-
+    
     .pronoun-examples {
         font-size: 0.9rem;
     }
-
+    
     .section {
-        padding: 20px;
-        margin-bottom: 30px;
-    }
-
-    .nav-menu {
-        gap: 10px;
-    }
-
-    .nav-link {
-        font-size: 0.75rem;
-        padding: 6px 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .main-title {
-        font-size: 1.8rem;
-    }
-
-    .profile-image {
-        width: 100px;
-        height: 100px;
-    }
-
-    .butterfly-accent {
-        font-size: 1.5rem;
-    }
-
-    .section h2 {
-        font-size: 1.4rem;
-    }
-
-    .nav-menu {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-    }
-}
-
-/* Accessibility improvements */
-@media (prefers-reduced-motion: reduce) {
-    .fade-in-element {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-
-    .butterfly-accent {
-        animation: none;
-    }
-
-    .sugar-sprinkles::before {
-        animation: none;
-    }
-
-    * {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-    }
-}
-
-/* Focus styles for better keyboard navigation */
-.nav-link:focus {
-    outline: 2px solid var(--accent-glow);
-    outline-offset: 2px;
-}
-
-a:focus {
-    outline: 2px solid var(--accent-glow);
-    outline-offset: 2px;
-}
+        padding
