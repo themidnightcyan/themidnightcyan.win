@@ -1,20 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://themidnightcyan.win/">
+    <meta property="og:title" content="About Me - Athena McKillian">
+    <meta property="og:description" content="FAQs about me!">
+    <meta property="og:image" content="https://themidnightcyan.win/logos/profile.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://themidnightcyan.win/">
+    <meta property="twitter:title" content="About Me - Athena McKillian">
+    <meta property="twitter:description" content="FAQs about me!">
+    <meta property="twitter:image" content="https://themidnightcyan.win/logos/profile.jpg">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#2a1b3d" />
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About & FAQ</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/jpeg" href="logos/profile.jpg">
+    <link rel="icon" type="image/jpeg" href="logos/avatar.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="container">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="bouncing-diamonds">
+                <span class="diamond">✦</span>
+                <span class="diamond">✧</span>
+                <span class="diamond">⋆</span>
+                <span class="diamond">✦</span>
+                <span class="diamond">✧</span>
+            </div>
+            <div class="rotating-donut">🪻</div>
+            <p class="loading-text">Loading magical content...</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="container hidden">
         <header class="fade-in-element">
             <div class="sugar-sprinkles"></div>
-            <img src="logos/profile.jpg" alt="Athena's Profile" class="profile-image">
+            <img src="logos/avatar.jpg" alt="Athena's Profile" class="profile-image">
             <h1 class="main-title">About Me & FAQ</h1>
             <div class="butterfly-accent">🪻</div>
         </header>
@@ -29,7 +64,7 @@
             <a href="#resources" class="nav-link">Resources</a>
         </nav>
 
-        <main>
+        <main>            
             <section id="about" class="section fade-in-element">
                 <h2>About Me</h2>
                 <p>Hey I'm Athena and welcome to this space! I'm known as Midnight Cyan for my obssession of creating midnight-themed inventions with cyan themed background.</p>
@@ -48,7 +83,6 @@
                         <p><strong>Reflexive:</strong> "Athena treated herself to cup of tea"</p>
                     </div>
                 </div>
-                <p></p>
             </section>
 
             <section id="interests" class="section fade-in-element">
@@ -63,8 +97,8 @@
                         <h4>📚 Reading</h4>
                         <p>Reading is a hobby I have picked up over time, from reading poems like Ozymandias, to books like Lord of the Flies, and even The Holy Bible</p>
                     </div>
-                    <div class="interest-item">
-                        <h4>🎧 Music </h4>
+                    <div class="interet-item">
+                        <h4>🎧 Music</h4>
                         <p>I enjoy alot of different music, from classical, to rock, even artists like Bemax and Little Mix</p>
                     </div>
                 </div>
@@ -74,10 +108,10 @@
                 <h2>Projects</h2>
                 <p>Here are some things I've been working on or am excited about:</p>
                 <div class="project-item">
-                    <h4>🪻 This FAQ Site</h4>
-                    <p>A personal space to share who I am and help others understand me better. Built with love, time and smiles :)</p>
+                    <h4>🪻 The Walls We Build</h4>
+                    <p>A book I am writing about Lark’s struggles with the ghosts of their past.</p>
                 </div>
-                <p><em>More projects coming soon! I'm always tinkering with something new.</em></p>
+                <p><em>More projects coming soon! I'm always designing something new.</em></p>
             </section>
 
             <section id="contact" class="section fade-in-element">
@@ -88,14 +122,13 @@
                     <p>📧 <strong>Email:</strong> themidnightcyan@outlook.com</p>
                     <p>📸 <strong>Instagram:</strong> @themidnightcyan</p>
                 </div>
-                <p><em>Feel free to reach out about projects, ask questions, or just to say hi! I love meeting new people.</em></p>
+                <p><em>Feel free to reach out about some of my works! I love meeting new people.</em></p>
             </section>
 
             <section id="faq" class="section fade-in-element">
                 <h2>FAQ</h2>
-
                 <div class="faq-item">
-                    <h3>Are you open to doinng work with me?</h3>
+                    <h3>Are you open to doing work with me?</h3>
                     <p>Absolutely! I love working on projects unleash my creativity. Feel free to reach out through Discord or email to discuss ideas.</p>
                 </div>
             </section>
@@ -105,23 +138,32 @@
                 <p>Here are some helpful links for learning more about neopronouns and LGBTQ+ topics:</p>
                 <div class="resource-item">
                     <h4>📚 Pronoun Resources</h4>
-                    <p><a href="https://pronouns.org/" target="_blank">Pronouns.org</a> - Comprehensive guide to all types of pronouns</p>
-                    <p><a href="https://lgbta.miraheze.org/" target="_blank">LGBTA Wiki</a> - Extensive documentation of LGBTQ+ identities and terminology</p>
+                    <p><a href="https://pronouns.org/" target="_blank">Pronouns.org</a> - Comprehensive guide to all
+                        types of pronouns</p>
+                    <p><a href="https://lgbta.miraheze.org/" target="_blank">LGBTA Wiki</a> - Extensive documentation of
+                        LGBTQ+ identities and terminology</p>
                 </div>
                 <div class="resource-item">
                     <h4>🏳️‍⚧️ General LGBTQ+ Support</h4>
-                    <p><a href="https://www.thetrevorproject.org/" target="_blank">The Trevor Project</a> - Crisis support and resources</p>
+                    <p><a href="https://www.thetrevorproject.org/" target="_blank">The Trevor Project</a> - Crisis
+                        support and resources</p>
                     <p><a href="https://pflag.org/" target="_blank">PFLAG</a> - Support for families and allies</p>
                 </div>
+            </section>
+            
+            <section id="discord" class="section fade-in-element">
+                <h2>My Discord Status!</h2>
+                <img src="https://dsc-readme.tsuni.dev/api/user/214167454291722241?aboutMe=Writing+a+book...%0ALover+of+loud+tunes%2C+literature+%26+pixel+blocks%2C+just+a+trans+gamer+girl+vibing+through+the+chaos&banner=https%3A%2F%2Ftenor.com%2FbbzmS.gif&theme=nitroDark&primaryColor=003f5c&accentColor=0070A6&width=700" alt="Discord Status" class="discord-embed">
             </section>
         </main>
 
         <footer class="fade-in-element">
             <div class="sugar-sprinkles"></div>
-            <p>Made with ✨ | © Athena Misty McKillian | 2025</p>
+            <p>Made with ✨ and 🪻 | © Athena Misty McKillian | 2025</p>
         </footer>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
