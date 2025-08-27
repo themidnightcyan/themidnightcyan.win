@@ -137,97 +137,6 @@ header {
     50% { transform: translateY(-10px) rotate(3deg); }
 }
 
-/* Flags section styling */
-.flags-section {
-    margin-bottom: 40px;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    scroll-margin-top: 20px;
-}
-
-.flags-section h2 {
-    color: var(--butterfly-purple);
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-    font-weight: 400;
-}
-
-.flags-section h2::after {
-    content: " 🏳️";
-    opacity: 0.7;
-    font-size: 0.8em;
-}
-
-.flags-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 25px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.flag-item {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.flag-item:hover {
-    transform: translateY(-5px);
-}
-
-.flag-image {
-    width: 100px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 2px solid var(--butterfly-purple);
-    box-shadow: 0 4px 15px rgba(163, 136, 238, 0.2);
-    transition: all 0.3s ease;
-}
-
-.flag-item:hover .flag-image {
-    border-color: var(--accent-glow);
-    box-shadow: 0 6px 20px rgba(163, 136, 238, 0.4);
-    transform: scale(1.05);
-}
-
-.flag-tooltip {
-    position: absolute;
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 63, 92, 0.95); /* updated dark tone */
-    color: var(--text-light);
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    border: 1px solid var(--butterfly-purple);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-    max-width: 220px;
-    white-space: normal;
-    text-align: center;
-    line-height: 1.3;
-    pointer-events: none;
-}
-
-.flag-item:hover .flag-tooltip {
-    opacity: 1;
-    visibility: visible;
-    bottom: -70px;
-}
-
 /* Navigation */
 .nav-menu {
     display: flex;
@@ -281,7 +190,7 @@ header {
 }
 
 .section h2::after {
-    content: " 🦋";
+    content: " 🪻";
     opacity: 0.7;
     font-size: 0.8em;
 }
@@ -546,28 +455,6 @@ html {
     
     .container {
         padding: 15px;
-    }
-
-    /* Flags responsive adjustments */
-    .flags-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 20px;
-    }
-    
-    .flag-image {
-        width: 80px;
-        height: 48px;
-    }
-    
-    .flag-tooltip {
-        font-size: 0.8rem;
-        padding: 8px 12px;
-        max-width: 180px;
-        bottom: -55px;
-    }
-
-    .flag-item:hover .flag-tooltip {
-        bottom: -65px;
     }
 }
 
