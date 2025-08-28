@@ -33,9 +33,9 @@
 
 /* Comic Sans font stack */
 :root {
-    --twilight-dark: #003f5c;   /* replaced #2a1b3d */
-    --twilight-medium: #2f6690; /* new medium variant */
-    --twilight-light: #84a9ac;  /* new light variant */
+    --cyan-dark: #003f5c;   /* replaced #2a1b3d */
+    --cyan-medium: #2f6690; /* new medium variant */
+    --cyan-light: #84a9ac;  /* new light variant */
     --lavender-purple: #9b7cb6;
     --diamond-pink: #f8d7da;
     --diamond-cream: #fff8dc;
@@ -52,7 +52,7 @@
 
 body {
     font-family: 'Comic Code', 'Comic Sans MS', 'Comic Sans', monospace, sans-serif;
-    background: linear-gradient(135deg, var(--twilight-dark) 0%, var(--twilight-medium) 100%);
+    background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan-medium) 100%);
     color: var(--text-light);
     line-height: 1.6;
     min-height: 100vh;
@@ -76,7 +76,7 @@ code, pre {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--twilight-dark) 0%, var(--twilight-medium) 100%);
+    background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan-medium) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
