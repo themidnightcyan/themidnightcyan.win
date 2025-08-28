@@ -1,5 +1,8 @@
 // Loading screen functionality
 document.addEventListener('DOMContentLoaded', () => {
+    // Reset any lingering transition effects from back button navigation
+    resetTransitionState();
+    
     const loadingScreen = document.getElementById('loading-screen');
     const mainContent = document.getElementById('main-content');
     
@@ -240,13 +243,9 @@ function performTransition(url, colorScheme, loadingText, emoji = '✦') {
 
     // Start the transition sequence
     setTimeout(() => {
-        // Fade in the overlay
+        // Fade in the overlay AND start color transition simultaneously
         transitionOverlay.classList.add('fade-in');
-        
-        // Change colors gradually
-        setTimeout(() => {
-            changeColors(colorScheme);
-        }, 250);
+        changeColors(colorScheme);
         
         // Navigate after transition completes
         setTimeout(() => {
@@ -266,3 +265,44 @@ function changeColors(colorScheme) {
     // Update the background gradient with new colors
     document.body.style.background = `linear-gradient(135deg, ${colorScheme['--cyan-dark'] || colorScheme['--twilight-dark']} 0%, ${colorScheme['--cyan-medium'] || colorScheme['--twilight-medium']} 100%)`;
 }
+
+function resetTransitionState() {
+    // Remove any existing transition overlays
+    const existingOverlays = document.querySelectorAll('.transition-overlay');
+    existingOverlays.forEach(overlay => overlay.remove());
+    
+    // Remove transition styles
+    const transitionStyles = document.getElementById('transition-styles');
+    if (transitionStyles) {
+        transitionStyles.remove();
+    }
+    
+    // Reset CSS custom properties to original values
+    const root = document.documentElement;
+    const originalColors = {
+        '--cyan-dark': '#003f5c',
+        '--cyan-medium': '#2f6690',
+        '--cyan-light': '#84a9ac',
+        '--lavender-purple': '#9b7cb6',
+        '--diamond-pink': '#f8d7da',
+        '--diamond-cream': '#fff8dc',
+        '--text-light': '#f5f5f5',
+        '--text-muted': '#d1c7d8',
+        '--accent-glow': '#a388ee'
+    };
+    
+    Object.entries(originalColors).forEach(([property, value]) => {
+        root.style.setProperty(property, value);
+    });
+    
+    // Reset body background to original
+    document.body.style.background = 'linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan-medium) 100%)';
+}
+
+// Also reset on page show event (handles back button better)
+window.addEventListener('pageshow', (event) => {
+    // If page is loaded from cache (back button), reset transition state
+    if (event.persisted) {
+        resetTransitionState();
+    }
+});
