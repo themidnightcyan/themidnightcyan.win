@@ -768,3 +768,127 @@ html {
         padding: 20px;
     }
 }
+
+/* GitHub Button Styles */
+.github-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.github-button a {
+    display: block;
+    text-decoration: none;
+    position: relative;
+}
+
+.github-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid var(--lavender-purple);
+    box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(42, 27, 61, 0.8);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+.github-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(163, 136, 238, 0.5);
+    border-color: var(--accent-glow);
+    background: rgba(42, 27, 61, 0.9);
+}
+
+.github-badge {
+    position: absolute;
+    top: 50%;
+    left: 75px;
+    transform: translateY(-50%);
+    background: rgba(42, 27, 61, 0.95);
+    backdrop-filter: blur(10px);
+    color: var(--text-light);
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--lavender-purple);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.github-badge::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-right: 8px solid rgba(42, 27, 61, 0.95);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.github-button a:hover .github-badge {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(5px);
+}
+
+/* Social Media Container for future buttons */
+.social-container {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Responsive adjustments for GitHub button */
+@media (max-width: 768px) {
+    .github-button {
+        top: 15px;
+        left: 15px;
+    }
+    
+    .social-container {
+        top: 85px;
+        left: 15px;
+    }
+    
+    .github-icon {
+        width: 50px;
+        height: 50px;
+        border-width: 2px;
+    }
+    
+    .github-badge {
+        left: 60px;
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+    
+    .github-badge::before {
+        border-width: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .github-badge {
+        left: 55px;
+        font-size: 0.75rem;
+        padding: 5px 8px;
+    }
+}
