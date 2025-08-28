@@ -136,8 +136,9 @@ function performTransition(url, colorScheme, loadingText, emoji = '✦') {
     const transitionOverlay = document.createElement('div');
     transitionOverlay.className = 'transition-overlay';
     
-    // Set initial hardcoded cyan colors
+    // Set initial hardcoded cyan colors AND transition property
     transitionOverlay.style.background = 'linear-gradient(135deg, #003f5c 0%, #2f6690 100%)';
+    transitionOverlay.style.transition = 'opacity 0.6s ease, background 2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
     
     // Create loading content
     const transitionContent = document.createElement('div');
@@ -173,7 +174,6 @@ function performTransition(url, colorScheme, loadingText, emoji = '✦') {
                 align-items: center;
                 z-index: 10000;
                 opacity: 0;
-                transition: opacity 0.6s ease, background 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
             
             .transition-overlay.fade-in {
@@ -253,17 +253,17 @@ function performTransition(url, colorScheme, loadingText, emoji = '✦') {
         // Start color transition after overlay is visible
         setTimeout(() => {
             // Transition the overlay background to target colors
-            const targetGradient = `linear-gradient(135deg, ${colorScheme['--cyan-dark'] || colorScheme['--twilight-dark']} 0%, ${colorScheme['--cyan-medium'] || colorScheme['--twilight-medium']} 100%)`;
+            const targetGradient = `linear-gradient(135deg, ${colorScheme['--twilight-dark'] || colorScheme['--cyan-dark']} 0%, ${colorScheme['--twilight-medium'] || colorScheme['--cyan-medium']} 100%)`;
             transitionOverlay.style.background = targetGradient;
             
             // Also change the page colors behind it
             changeColors(colorScheme);
-        }, 300);
+        }, 400);
         
         // Navigate after everything is complete
         setTimeout(() => {
             window.location.href = url;
-        }, 2500);
+        }, 2800);
     }, 50);
 }
 
