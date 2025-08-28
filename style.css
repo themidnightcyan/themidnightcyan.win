@@ -259,8 +259,8 @@ code, pre {
 /* System Button Styles */
 .system-button {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 100px;
+    right: 20px;
     z-index: 1000;
 }
 
@@ -290,7 +290,7 @@ code, pre {
 .system-badge {
     position: absolute;
     top: 50%;
-    left: 75px;
+    right: 75px;
     transform: translateY(-50%);
     background: rgba(42, 27, 61, 0.95);
     backdrop-filter: blur(10px);
@@ -311,7 +311,7 @@ code, pre {
     content: '';
     position: absolute;
     top: 50%;
-    left: -8px;
+    right: -8px;
     transform: translateY(-50%);
     width: 0;
     height: 0;
@@ -330,7 +330,7 @@ code, pre {
 @media (max-width: 768px) {
     .system-button {
         top: 15px;
-        left: 15px;
+        right: 15px;
     }
     
     .system-image {
@@ -340,13 +340,13 @@ code, pre {
     }
     
     .system-badge {
-        left: 60px;
+        right: 60px;
         font-size: 0.8rem;
         padding: 6px 10px;
     }
     
     .system-badge::after {
-        left: -6px;
+        right: -6px;
         border-left-width: 6px;
         border-top-width: 6px;
         border-bottom-width: 6px;
@@ -355,7 +355,7 @@ code, pre {
 
 @media (max-width: 480px) {
     .system-badge {
-        left: 55px;
+        right: 55px;
         font-size: 0.75rem;
         padding: 5px 8px;
     }
