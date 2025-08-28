@@ -329,7 +329,7 @@ code, pre {
 /* Responsive adjustments for syster button */
 @media (max-width: 768px) {
     .system-button {
-        top: 15px;
+        top: 75px;
         right: 15px;
     }
     
@@ -354,6 +354,9 @@ code, pre {
 }
 
 @media (max-width: 480px) {
+    .system-button {
+        top: 70px; 
+    }
     .system-badge {
         right: 55px;
         font-size: 0.75rem;
