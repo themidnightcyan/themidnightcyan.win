@@ -320,7 +320,7 @@ code, pre {
     border-bottom: 8px solid transparent;
 }
 
-.system-button a:hover .syster-badge {
+.system-button a:hover .system-badge {
     opacity: 1;
     visibility: visible;
     transform: translateY(-50%) translateX(-5px);
