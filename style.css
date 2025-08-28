@@ -573,6 +573,12 @@ header {
     font-size: 1.2rem;
 }
 
+.project-item h4 a {
+    color: inherit;
+    font: inherit;
+    text-decoration: none;
+}
+
 .project-item p {
     margin-bottom: 0;
 }
