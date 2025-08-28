@@ -132,9 +132,12 @@ function setupTransitionButtons() {
 }
 
 function performTransition(url, colorScheme, loadingText, emoji = '✦') {
-    // Create transition overlay
+    // Create transition overlay with HARDCODED starting colors
     const transitionOverlay = document.createElement('div');
     transitionOverlay.className = 'transition-overlay';
+    
+    // Set initial hardcoded cyan colors
+    transitionOverlay.style.background = 'linear-gradient(135deg, #003f5c 0%, #2f6690 100%)';
     
     // Create loading content
     const transitionContent = document.createElement('div');
@@ -165,13 +168,12 @@ function performTransition(url, colorScheme, loadingText, emoji = '✦') {
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan-medium) 100%);
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 z-index: 10000;
                 opacity: 0;
-                transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), background 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+                transition: opacity 0.6s ease, background 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
             
             .transition-overlay.fade-in {
@@ -245,14 +247,23 @@ function performTransition(url, colorScheme, loadingText, emoji = '✦') {
 
     // Start the transition sequence
     setTimeout(() => {
-        // Fade in the overlay AND start color transition simultaneously
+        // Fade in the overlay
         transitionOverlay.classList.add('fade-in');
-        changeColors(colorScheme);
         
-        // Navigate after color transition is COMPLETE
+        // Start color transition after overlay is visible
+        setTimeout(() => {
+            // Transition the overlay background to target colors
+            const targetGradient = `linear-gradient(135deg, ${colorScheme['--cyan-dark'] || colorScheme['--twilight-dark']} 0%, ${colorScheme['--cyan-medium'] || colorScheme['--twilight-medium']} 100%)`;
+            transitionOverlay.style.background = targetGradient;
+            
+            // Also change the page colors behind it
+            changeColors(colorScheme);
+        }, 300);
+        
+        // Navigate after everything is complete
         setTimeout(() => {
             window.location.href = url;
-        }, 2000); // Increased from 1500 to 2000ms
+        }, 2500);
     }, 50);
 }
 
