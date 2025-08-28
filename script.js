@@ -171,7 +171,7 @@ function performTransition(url, colorScheme, loadingText, emoji = '✦') {
                 align-items: center;
                 z-index: 10000;
                 opacity: 0;
-                transition: opacity 0.5s ease;
+                transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), background 1.2s cubic-bezier(0.4, 0, 0.2, 1);
             }
             
             .transition-overlay.fade-in {
@@ -186,13 +186,15 @@ function performTransition(url, colorScheme, loadingText, emoji = '✦') {
             .spinning-emoji {
                 font-size: 4rem;
                 margin-bottom: 20px;
-                animation: spin-emoji 2s linear infinite;
-                text-shadow: 0 0 20px var(--accent-glow);
+                animation: spin-emoji 1.5s linear infinite;
+                text-shadow: 0 0 25px var(--accent-glow), 0 0 50px var(--accent-glow);
+                filter: drop-shadow(0 0 10px var(--accent-glow));
             }
             
             @keyframes spin-emoji {
-                from { transform: rotate(0deg); }
-                to { transform: rotate(360deg); }
+                from { transform: rotate(0deg) scale(1); }
+                50% { transform: rotate(180deg) scale(1.1); }
+                to { transform: rotate(360deg) scale(1); }
             }
             
             .transition-diamonds {
@@ -247,23 +249,33 @@ function performTransition(url, colorScheme, loadingText, emoji = '✦') {
         transitionOverlay.classList.add('fade-in');
         changeColors(colorScheme);
         
-        // Navigate after transition completes
+        // Navigate after color transition is COMPLETE
         setTimeout(() => {
             window.location.href = url;
-        }, 1500);
+        }, 2000); // Increased from 1500 to 2000ms
     }, 50);
 }
 
 function changeColors(colorScheme) {
     const root = document.documentElement;
     
-    // Apply new color scheme
+    // Create longer, smoother color transition animations
+    root.style.transition = 'all 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    document.body.style.transition = 'background 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    
+    // Apply new color scheme with smooth transition
     Object.entries(colorScheme).forEach(([property, value]) => {
         root.style.setProperty(property, value);
     });
     
-    // Update the background gradient with new colors
+    // Update the background gradient with smooth transition
     document.body.style.background = `linear-gradient(135deg, ${colorScheme['--cyan-dark'] || colorScheme['--twilight-dark']} 0%, ${colorScheme['--cyan-medium'] || colorScheme['--twilight-medium']} 100%)`;
+    
+    // Clean up transition styles after animation completes
+    setTimeout(() => {
+        root.style.transition = '';
+        document.body.style.transition = '';
+    }, 1800);
 }
 
 function resetTransitionState() {
