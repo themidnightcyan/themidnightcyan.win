@@ -125,9 +125,11 @@ code, pre {
 }
 
 .rotating-lavender {
-    font-size: 3rem;
+    font-size: 4rem;
     animation: rotate 2s linear infinite;
-    margin: 20px 0;
+    margin-bottom: 20px;
+    text-shadow: 0 0 25px var(--accent-glow), 0 0 50px var(--accent-glow);
+    filter: drop-shadow(0 0 10px var(--accent-glow));
 }
 
 @keyframes rotate {
