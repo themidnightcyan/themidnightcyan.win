@@ -33,15 +33,7 @@
 
 /* Comic Sans font stack */
 :root {
-    --cyan-dark: #003f5c;   /* replaced #2a1b3d */
-    --cyan-medium: #2f6690; /* new medium variant */
-    --cyan-light: #84a9ac;  /* new light variant */
-    --lavender-purple: #9b7cb6;
-    --diamond-pink: #f8d7da;
-    --diamond-cream: #fff8dc;
-    --text-light: #f5f5f5;
-    --text-muted: #d1c7d8;
-    --accent-glow: #a388ee;
+
 }
 
 * {
@@ -56,6 +48,7 @@ body {
     color: var(--text-light);
     line-height: 1.6;
     min-height: 100vh;
+    cursor: url('logos/auto.png'), auto;
 }
 
 /* Code elements specifically use Comic Code */
@@ -82,6 +75,7 @@ code, pre {
     align-items: center;
     z-index: 9999;
     transition: opacity 0.5s ease;
+    cursor: none;
 }
 
 .loading-screen.fade-out {
@@ -92,6 +86,19 @@ code, pre {
 .loading-content {
     text-align: center;
     color: var(--text-light);
+}
+
+/* Animated loading cursor styles */
+#loading-cursor {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+    z-index: 10000;
+    display: none;
+    /* hidden until JS starts it */
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .bouncing-diamonds {
@@ -175,7 +182,7 @@ code, pre {
     box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
     transition: all 0.3s ease;
     display: block;
-    cursor: pointer;
+    cursor: url(logos/pointer.png), pointer;
 }
 
 .syster-image:hover {
@@ -280,7 +287,7 @@ code, pre {
     box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
     transition: all 0.3s ease;
     display: block;
-    cursor: pointer;
+    cursor: url('logos/pointer.png'), pointer;
 }
 
 .system-image:hover {
@@ -458,6 +465,7 @@ header {
     color: var(--diamond-cream);
     background: rgba(163, 136, 238, 0.2);
     transform: translateY(-2px);
+    cursor: url('logos/pointer.png'), pointer;
 }
 
 .nav-link:hover::after {
@@ -586,6 +594,10 @@ header {
 
 .project-item p {
     margin-bottom: 0;
+}
+
+.project-link {
+    cursor: url('logos/pointer.png'), pointer;
 }
 
 /* Contact section */
@@ -806,7 +818,7 @@ html {
     justify-content: center;
     background: rgba(42, 27, 61, 0.8);
     backdrop-filter: blur(10px);
-    cursor: pointer;
+    cursor: url('logos/pointer.png'), pointer;
     color: var(--text-light);
 }
 
@@ -865,6 +877,253 @@ html {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+/* Artists section styling */
+.artists-section {
+    margin-bottom: 40px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    scroll-margin-top: 20px;
+    position: relative;
+    z-index: 100;
+}
+
+.artists-section h2 {
+    color: var(--lavender-purple);
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.artists-section h2::after {
+    content: " 🎵";
+    opacity: 0.7;
+    font-size: 0.8em;
+}
+
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: visible;
+    justify-items: center;
+}
+
+.artist-item {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    cursor: url('logos/help.png'), help;
+    transition: transform 0.3s ease;
+    overflow: visible; /* Already here, keeps tooltip visible */
+}
+
+.artist-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    z-index: 20;
+}
+
+.artist-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--lavender-purple);
+    box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
+    transition: all 0.3s ease;
+}
+
+.artist-item:hover .artist-image {
+    border-color: var(--accent-glow);
+    box-shadow: 0 6px 25px rgba(163, 136, 238, 0.5);
+    filter: brightness(0.7);
+}
+
+/* Artist name overlay */
+.artist-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(42, 27, 61, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.artist-item:hover .artist-overlay {
+    opacity: 1;
+}
+
+.artist-name {
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Artist tooltip */
+.artist-tooltip {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    margin-top: 15px;
+    background: rgba(42, 27, 61, 0.95);
+    backdrop-filter: blur(10px);
+    color: var(--text-light);
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    border: 1px solid var(--lavender-purple);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    max-width: 700px;           /* wider tooltip */
+    text-align: center;         /* center text for better flow */
+    line-height: 1.5;           /* more breathing room */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: normal;        /* allow wrapping */
+    pointer-events: none;
+    z-index: 50;
+}
+
+.artist-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgba(42, 27, 61, 0.95);
+}
+
+.artist-item:hover .artist-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(5px); /* smooth slide effect */
+}
+
+/* Flags section styling */
+.flags-section {
+    margin-bottom: 40px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    scroll-margin-top: 20px;
+    position: relative;
+    /* keep tooltips above other sections */
+    z-index: 100;
+}
+
+.flags-section h2 {
+    color: var(--butterfly-purple);
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.flags-section h2::after {
+    content: " 🏳️";
+    opacity: 0.7;
+    font-size: 0.8em;
+}
+
+.flags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: visible;
+    justify-items: center;
+}
+
+.flag-item {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: url('logos/pointer.png'), pointer;
+    transition: transform 0.3s ease;
+    overflow: visible;
+    width: 140px;
+    /* consistent width */
+    text-align: center;
+}
+
+.flag-item:hover {
+    transform: translateY(-5px);
+    z-index: 20;
+    cursor: url('logos/help.png'), help;
+}
+
+.flag-image {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid var(--butterfly-purple);
+    box-shadow: 0 4px 15px rgba(163, 136, 238, 0.2);
+    transition: all 0.3s ease;
+}
+
+.flag-item:hover .flag-image {
+    border-color: var(--accent-glow);
+    box-shadow: 0 6px 20px rgba(163, 136, 238, 0.4);
+    transform: scale(1.05);
+}
+
+/* Tooltip styling */
+.flag-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 8px;
+    background: rgba(42, 27, 61, 0.95);
+    color: var(--text-light);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    border: 1px solid var(--butterfly-purple);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 220px;
+    text-align: center;
+    line-height: 1.3;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: normal;
+    pointer-events: none;
+    z-index: 50;
+}
+
+.flag-item:hover .flag-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(5px);
 }
 
 /* Responsive adjustments for GitHub button */
