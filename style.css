@@ -48,7 +48,7 @@ body {
     color: var(--text-light);
     line-height: 1.6;
     min-height: 100vh;
-    cursor: url('logos/auto.png'), auto;
+    cursor: url('https://yuri-lover.win/cursors/themidnightcyan/auto.png'), auto;
 }
 
 /* Code elements specifically use Comic Code */
@@ -182,7 +182,7 @@ code, pre {
     box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
     transition: all 0.3s ease;
     display: block;
-    cursor: url(logos/pointer.png), pointer;
+    cursor: url('https://yuri-lover.win/cursors/themidnightcyan/pointer.png'), pointer;
 }
 
 .syster-image:hover {
@@ -287,7 +287,7 @@ code, pre {
     box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
     transition: all 0.3s ease;
     display: block;
-    cursor: url('logos/pointer.png'), pointer;
+    cursor: url('https://yuri-lover.win/cursors/themidnightcyan/pointer.png'), pointer;
 }
 
 .system-image:hover {
@@ -465,7 +465,7 @@ header {
     color: var(--diamond-cream);
     background: rgba(163, 136, 238, 0.2);
     transform: translateY(-2px);
-    cursor: url('logos/pointer.png'), pointer;
+    cursor: url('https://yuri-lover.win/cursors/themidnightcyan/pointer.png'), pointer;
 }
 
 .nav-link:hover::after {
@@ -597,7 +597,7 @@ header {
 }
 
 .project-link {
-    cursor: url('logos/pointer.png'), pointer;
+    cursor: url('https://yuri-lover.win/cursors/themidnightcyan/pointer.png'), pointer;
 }
 
 /* Contact section */
@@ -818,7 +818,7 @@ html {
     justify-content: center;
     background: rgba(42, 27, 61, 0.8);
     backdrop-filter: blur(10px);
-    cursor: url('logos/pointer.png'), pointer;
+    cursor: url('https://yuri-lover.win/cursors/themidnightcyan/pointer.png'), pointer;
     color: var(--text-light);
 }
 
@@ -920,7 +920,7 @@ html {
     position: relative;
     width: 140px;
     height: 140px;
-    cursor: url('logos/help.png'), help;
+    cursor: url('https://yuri-lover.win/cursors/themidnightcyan/help.png'), help;
     transition: transform 0.3s ease;
     overflow: visible; /* Already here, keeps tooltip visible */
 }
@@ -1065,7 +1065,7 @@ html {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    cursor: url('logos/pointer.png'), pointer;
+    cursor: url('https://yuri-lover.win/cursors/themidnightcyan/pointer.png'), pointer;
     transition: transform 0.3s ease;
     overflow: visible;
     width: 140px;
@@ -1076,7 +1076,7 @@ html {
 .flag-item:hover {
     transform: translateY(-5px);
     z-index: 20;
-    cursor: url('logos/help.png'), help;
+    cursor: url('https://yuri-lover.win/cursors/themidnightcyan/help.png'), help;
 }
 
 .flag-image {
