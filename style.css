@@ -160,21 +160,21 @@ code, pre {
     display: none;
 }
 
-/* Syster Button Styles */
-.syster-button {
+/* butterfly Button Styles */
+.butterfly-button {
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 1000;
 }
 
-.syster-button a {
+.butterfly-button a {
     display: block;
     text-decoration: none;
     position: relative;
 }
 
-.syster-image {
+.butterfly-image {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -185,13 +185,13 @@ code, pre {
     cursor: url('https://yuri-lover.win/cursors/themidnightcyan/pointer.png'), pointer;
 }
 
-.syster-image:hover {
+.butterfly-image:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 20px rgba(163, 136, 238, 0.5);
     border-color: var(--accent-glow);
 }
 
-.syster-badge {
+.butterfly-badge {
     position: absolute;
     top: 50%;
     right: 75px;
@@ -211,7 +211,7 @@ code, pre {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.syster-badge::after {
+.butterfly-badge::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -224,32 +224,32 @@ code, pre {
     border-bottom: 8px solid transparent;
 }
 
-.syster-button a:hover .syster-badge {
+.butterfly-button a:hover .butterfly-badge {
     opacity: 1;
     visibility: visible;
     transform: translateY(-50%) translateX(-5px);
 }
 
-/* Responsive adjustments for syster button */
+/* Responsive adjustments for butterfly button */
 @media (max-width: 768px) {
-    .syster-button {
+    .butterfly-button {
         top: 15px;
         right: 15px;
     }
     
-    .syster-image {
+    .butterfly-image {
         width: 50px;
         height: 50px;
         border-width: 2px;
     }
     
-    .syster-badge {
+    .butterfly-badge {
         right: 60px;
         font-size: 0.8rem;
         padding: 6px 10px;
     }
     
-    .syster-badge::after {
+    .butterfly-badge::after {
         right: -6px;
         border-left-width: 6px;
         border-top-width: 6px;
@@ -258,115 +258,7 @@ code, pre {
 }
 
 @media (max-width: 480px) {
-    .syster-badge {
-        right: 55px;
-        font-size: 0.75rem;
-        padding: 5px 8px;
-    }
-}
-
-/* System Button Styles */
-.system-button {
-    position: fixed;
-    top: 100px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.system-button a {
-    display: block;
-    text-decoration: none;
-    position: relative;
-}
-
-.system-image {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 3px solid var(--lavender-purple);
-    box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
-    transition: all 0.3s ease;
-    display: block;
-    cursor: url('https://yuri-lover.win/cursors/themidnightcyan/pointer.png'), pointer;
-}
-
-.system-image:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(163, 136, 238, 0.5);
-    border-color: var(--accent-glow);
-}
-
-.system-badge {
-    position: absolute;
-    top: 50%;
-    right: 75px;
-    transform: translateY(-50%);
-    background: rgba(42, 27, 61, 0.95);
-    backdrop-filter: blur(10px);
-    color: var(--text-light);
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    border: 1px solid var(--lavender-purple);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.system-badge::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -8px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 8px solid rgba(42, 27, 61, 0.95);
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-}
-
-.system-button a:hover .system-badge {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-50%) translateX(-5px);
-}
-
-/* Responsive adjustments for syster button */
-@media (max-width: 768px) {
-    .system-button {
-        top: 75px;
-        right: 15px;
-    }
-    
-    .system-image {
-        width: 50px;
-        height: 50px;
-        border-width: 2px;
-    }
-    
-    .system-badge {
-        right: 60px;
-        font-size: 0.8rem;
-        padding: 6px 10px;
-    }
-    
-    .system-badge::after {
-        right: -6px;
-        border-left-width: 6px;
-        border-top-width: 6px;
-        border-bottom-width: 6px;
-    }
-}
-
-@media (max-width: 480px) {
-    .system-button {
-        top: 70px; 
-    }
-    .system-badge {
+    .butterfly-badge {
         right: 55px;
         font-size: 0.75rem;
         padding: 5px 8px;
@@ -792,81 +684,6 @@ html {
     }
 }
 
-/* GitHub Button Styles */
-.github-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-}
-
-.github-button a {
-    display: block;
-    text-decoration: none;
-    position: relative;
-}
-
-.github-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 3px solid var(--lavender-purple);
-    box-shadow: 0 4px 15px rgba(163, 136, 238, 0.3);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(42, 27, 61, 0.8);
-    backdrop-filter: blur(10px);
-    cursor: url('https://yuri-lover.win/cursors/themidnightcyan/pointer.png'), pointer;
-    color: var(--text-light);
-}
-
-.github-icon:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(163, 136, 238, 0.5);
-    border-color: var(--accent-glow);
-    background: rgba(42, 27, 61, 0.9);
-}
-
-.github-badge {
-    position: absolute;
-    top: 50%;
-    left: 75px;
-    transform: translateY(-50%);
-    background: rgba(42, 27, 61, 0.95);
-    backdrop-filter: blur(10px);
-    color: var(--text-light);
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    border: 1px solid var(--lavender-purple);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.github-badge::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -8px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-right: 8px solid rgba(42, 27, 61, 0.95);
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-}
-
-.github-button a:hover .github-badge {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-50%) translateX(5px);
-}
 
 /* Social Media Container for future buttons */
 .social-container {
@@ -1124,41 +941,4 @@ html {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(5px);
-}
-
-/* Responsive adjustments for GitHub button */
-@media (max-width: 768px) {
-    .github-button {
-        top: 15px;
-        left: 15px;
-    }
-    
-    .social-container {
-        top: 85px;
-        left: 15px;
-    }
-    
-    .github-icon {
-        width: 50px;
-        height: 50px;
-        border-width: 2px;
-    }
-    
-    .github-badge {
-        left: 60px;
-        font-size: 0.8rem;
-        padding: 6px 10px;
-    }
-    
-    .github-badge::before {
-        border-width: 6px;
-    }
-}
-
-@media (max-width: 480px) {
-    .github-badge {
-        left: 55px;
-        font-size: 0.75rem;
-        padding: 5px 8px;
-    }
 }

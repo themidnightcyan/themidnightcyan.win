@@ -87,14 +87,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function setupTransitionButtons() {
     // Syster button transition
-    const systerButton = document.querySelector('.syster-button a');
-    if (systerButton) {
-        systerButton.addEventListener('click', (e) => {
+    const butterflyButton = document.querySelector('.butterfly-button a');
+    if (butterflyButton) {
+        butterflyButton.addEventListener('click', (e) => {
             e.preventDefault();
-            const url = systerButton.href;
+            const url = butterflyButton.href;
             
             // Syster's color scheme (from the CSS you provided)
-            const systerColors = {
+            const buttterflyColors = {
                 '--twilight-dark': '#2a1b3d',
                 '--twilight-medium': '#44318d',
                 '--twilight-light': '#6b5b95',
@@ -104,29 +104,7 @@ function setupTransitionButtons() {
                 '--accent-glow': '#a388ee'
             };
             
-            performTransition(url, systerColors, 'Changing to magical content...', '🍩');
-        });
-    }
-
-    // System button transition
-    const systemButton = document.querySelector('.system-button a');
-    if (systemButton) {
-        systemButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            const url = systemButton.href;
-            
-            // System colors (assuming a more neutral/tech theme)
-            const systemColors = {
-                '--cyan-dark': '#1a1a2e',
-                '--cyan-medium': '#16213e',
-                '--cyan-light': '#0f3460',
-                '--lavender-purple': '#533483',
-                '--diamond-pink': '#e94560',
-                '--diamond-cream': '#f5f5f5',
-                '--accent-glow': '#0f4c75'
-            };
-            
-            performTransition(url, systemColors, 'Connecting to system hub...', '⚙️');
+            performTransition(url, buttterflyColors, 'Changing to magical content...', '🍩');
         });
     }
 }
